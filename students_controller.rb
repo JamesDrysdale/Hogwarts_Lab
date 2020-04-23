@@ -6,6 +6,11 @@ also_reload('./models/*')
 
 # index
 
+get '/students' do 
+    @students = Student.all
+    erb(:index)
+end
+
 # show
 
 # new
