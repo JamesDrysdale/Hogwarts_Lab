@@ -12,18 +12,28 @@ get '/students' do
     erb(:index)
 end
 
-# show
 
+# new
+get '/students/new' do
+    erb(:new)
+end
+
+
+# show
 get '/students/:id' do
     @student = Student.find(params[:id])
     erb(:show)
 end
 
-# new
 
 
 
 # create
+
+post '/students' do 
+    @student = Student.new(params).save
+    erb(:create)
+end
 
 # edit
 
