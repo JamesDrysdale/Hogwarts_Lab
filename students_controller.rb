@@ -30,7 +30,15 @@ post '/students' do
 end
 
 # edit
+get '/students/:id/edit' do 
+    @student = Student.find(params[:id])
+    erb(:edit)
+end
 
 # update
+post '/students/:id' do
+    Student.new(params).update
+    redirect to '/students'
+end
 
 # destroy
