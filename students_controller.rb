@@ -13,6 +13,11 @@ end
 
 # show
 
+get '/students/:id' do
+    @students = Student.find(params[:id])
+    erb(:show)
+end
+
 # new
 
 # create
