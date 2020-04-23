@@ -6,12 +6,10 @@ also_reload('./models/*')
 require('pry')
 
 # index
-
 get '/students' do 
     @students = Student.all
     erb(:index)
 end
-
 
 # new
 get '/students/new' do
@@ -25,14 +23,10 @@ get '/students/:id' do
     erb(:show)
 end
 
-
-
-
 # create
-
 post '/students' do 
     @student = Student.new(params).save
-    erb(:create)
+    redirect to '/students'
 end
 
 # edit
